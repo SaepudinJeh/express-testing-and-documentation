@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && swc ./src -d dist",
+    "start": "node dist/index.js"
+  },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "@tsconfig/node18": "^1.0.1",
