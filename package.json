@@ -11,8 +11,8 @@
     "watch-compile": "swc src -w --out-dir dist",
     "watch-dev": "nodemon --watch \"dist/**/*\" -e js ./dist/index",
     "test": "mocha tests/**/*.spec.ts -r @swc/register -extension ts",
-    "watch-test": "nodemon --watch \"tests/**/*.spec.ts\" --exec \"npm test\""
-
+    "watch-test": "nodemon --watch \"tests/**/*.spec.ts\" --exec \"npm test\"",
+    "coverage-test": "nyc npm test"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.62",
@@ -38,6 +38,7 @@
     "eslint": "^8.36.0",
     "mocha": "^10.2.0",
     "nodemon": "^3.0.1",
+    "nyc": "^15.1.0",
     "sinon": "^17.0.1",
     "supertest": "^6.3.3",
     "typescript": "^5.0.2"
