@@ -5,7 +5,7 @@
 ## API DOCUMENTATION
 
 
-#### - export folder json to postman
+#### - export file json postman in folder documentation_api
 
 ## RUN DEV
 
