@@ -3,6 +3,7 @@ import { createEventController } from "./post.controller";
 import { updateEventController } from "./update.controller";
 import { findEventController, findEventsController } from "./get.controller";
 import { deleteEventController } from './delete.controller';
+import { sendEmailController, sendEmaileEnqueueController } from './email.controller';
 
 
 interface IEventController {
@@ -11,6 +12,10 @@ interface IEventController {
     findEventsController: RequestHandler;
     updateEventController: RequestHandler;
     deleteEventController: RequestHandler;
+
+    // Email controller
+    sendEmailController: RequestHandler;
+    sendEmaileEnqueueController: RequestHandler;
 }
 
 const eventController: IEventController = {
@@ -18,7 +23,9 @@ const eventController: IEventController = {
     updateEventController,
     findEventController,
     findEventsController,
-    deleteEventController
+    deleteEventController,
+    sendEmailController,
+    sendEmaileEnqueueController
 };
 
 export default eventController;

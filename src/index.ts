@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import createError, { HttpError } from 'http-errors';
 import mongoose from 'mongoose';
 import routers from './routes';
+import { startEmailConsumer } from './utils/rabbitMq.util';
 
 const app: Express = express();
 
@@ -35,6 +36,8 @@ mongoose.connect(MONGO_URI).then(() => console.log('Connected to mongodb...'));
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
+
+startEmailConsumer()
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server running on PORT ${port}`);
